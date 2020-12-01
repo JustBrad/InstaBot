@@ -44,7 +44,7 @@ class InstaBot:
         # Create path variable for driver
         self.PATH = "C:\Program Files (x86)\chromedriver.exe"
         self.MAC_PATH = "/Users/bradegbert/Documents/chromedriver"
-        self.RP_Path = "/usr/bin/chromedriver"
+        self.RP_PATH = "/usr/bin/chromedriver"
 
         # Start program
         self.open_gui()
