@@ -99,7 +99,7 @@ class InstaBot:
     # Login
     def login(self):
         # Create webdriver
-        self.driver = webdriver.Chrome(self.PATH)
+        self.driver = webdriver.Chrome(self.RP_PATH)
 
         # Goes to URL page using string interpolation ... '{}' is the self.base_url
         # For example '{}/accounts/login'.format(self.base_url) would go to https://www.instagram.com/accounts/login
@@ -368,7 +368,7 @@ class InstaBot:
                     "//button[contains(text(), 'Post')]")
 
                 x = comment_box.location.get('x') + 32
-                y = comment_box.location.get('y') + 150
+                y = comment_box.location.get('y') + 200 # Works at 150 for Windows, must be 200 for RaspberryPi
 
                 if chance_to_comment == 1:
                     print("Commenting on post! ❤")
