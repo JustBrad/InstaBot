@@ -99,7 +99,7 @@ class InstaBot:
     # Login
     def login(self):
         # Create webdriver
-        self.driver = webdriver.Chrome(self.RP_PATH)
+        self.driver = webdriver.Chrome(self.PATH)
 
         # Goes to URL page using string interpolation ... '{}' is the self.base_url
         # For example '{}/accounts/login'.format(self.base_url) would go to https://www.instagram.com/accounts/login
