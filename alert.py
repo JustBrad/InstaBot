@@ -25,14 +25,12 @@ def send_alert(subject, body, to):
     server.login(user, password)
     server.send_message(msg)
     server.quit()
-    print("Sent!")
+    print("Sent alert!")
 
 
-if __name__ == '__main__':
-    brad_email = "bradegbert26@gmail.com"
-    brad_phone = "2146320726@txt.att.net"
+# if __name__ == '__main__':
 
-    send_alert("", "test", brad_phone)
+    # send_alert("", "", bradegbert26@gmail.com)
 
     # In order to send a text message, [insert 10-digit number]@txt.att.net
     # https://www.digitaltrends.com/mobile/how-to-send-a-text-from-your-email-account/

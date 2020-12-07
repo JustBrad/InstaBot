@@ -10,6 +10,7 @@ import random
 import pyautogui as pg
 from tkinter import *
 import threading
+from alert import send_alert
 
 
 # Create bot class
@@ -37,8 +38,8 @@ class InstaBot:
         self.log = "Click \'Login\' to start bot."
 
         # Probabilities (1 in [x] chance)
-        self.prob_like = 4      # 25%
-        self.prob_follow = 25   # 4%
+        self.prob_like = 5      # 20%
+        self.prob_follow = 50   # 2%
         self.prob_comment = 10  # 10%
 
         # Create path variable for driver
@@ -168,7 +169,12 @@ class InstaBot:
         self.driver.refresh()
         time.sleep(4)
 
+    # Return current url
+    def get_current_url(self):
+        return self.driver.current_url
+
     # Choose an action at random
+
     def do_something(self):
 
         # Either browse page, scroll on page, or reset
@@ -373,6 +379,11 @@ class InstaBot:
                 if chance_to_comment == 1:
                     print("Commenting on post! ❤")
                     print(comments[num])
+
+                    # Send alert via email
+                    send_alert("Commented on a post!",
+                               f"{comments[num]}\n\n{self.get_current_url()}", "bradegbert26@gmail.com")
+
                     # Comment with pyautogui
                     pg.moveTo(x, y, 0.25)
                     time.sleep(2)
