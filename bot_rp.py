@@ -40,7 +40,7 @@ class InstaBot:
         # Probabilities (1 in [x] chance)
         self.prob_like = 5      # 20%
         self.prob_follow = 50   # 2%
-        self.prob_comment = 1  # 10%
+        self.prob_comment = 10  # 10%
 
         # Create path variable for driver
         self.PATH = "C:\Program Files (x86)\chromedriver.exe"
