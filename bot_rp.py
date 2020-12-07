@@ -40,7 +40,7 @@ class InstaBot:
         # Probabilities (1 in [x] chance)
         self.prob_like = 5      # 20%
         self.prob_follow = 50   # 2%
-        self.prob_comment = 10  # 10%
+        self.prob_comment = 1  # 10%
 
         # Create path variable for driver
         self.PATH = "C:\Program Files (x86)\chromedriver.exe"
@@ -373,8 +373,8 @@ class InstaBot:
                     "//button[contains(text(), 'Post')]")
 
                 x = comment_box.location.get('x') + 32
-                # Works at 150 for Windows, must be 200 for RaspberryPi
-                y = comment_box.location.get('y') + 200
+                # Works at 150 for Windows, must be 190 for RaspberryPi
+                y = comment_box.location.get('y') + 190
 
                 if chance_to_comment == 1:
                     print("Commenting on post! ❤")
